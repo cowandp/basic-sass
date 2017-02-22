@@ -1,0 +1,159 @@
+@import "variables";
+@import "mixins";
+
+#EASContent {
+    #ecert-menu {
+        clear: both;
+        .breadcrumb {
+            font-weight: bolder;
+        }
+        .breadcrumb .active {
+            color: $va-navy-darker;
+        }
+        ul.nav-pills {
+            padding: 0 .5em 0 0;
+            margin: 0 0 5px;
+            list-style: outside none none;
+            /* border-radius: 3px; */
+            background-color: $va-lighter-grey;
+            border: none;
+        }
+
+        .nav-pills > li {
+            border-left: 1px solid $va-white;
+            border-top: 1px solid $va-white;
+            border-right: none;
+            border-bottom: none;
+        }
+        .nav-pills > li:first-of-type {
+            margin-left: .5em;
+        }
+        .nav-pills > li a {
+            color: #000;
+            margin: 0;
+            padding: 8px 10px;
+        }
+        .nav-pills > li.ecertHelp {
+            border-right: 1px solid $va-white;
+        }
+
+        @include navigation-button("createCorFile", $va-green, $va-white);
+        @include navigation-button("ecertProfile", darken($va-light-blue,5%), $va-white);
+        @include navigation-button("ecertAnnouncement", $va-dark-red, $va-white);
+
+        .nav-pills li .active {
+            background-color: $va-navy;
+            border-radius: 0;
+            font-weight: 400;
+            color: $va-white;
+        }
+        .nav-pills li > a:hover,
+        .nav-pills li > a:active {
+            /* background-color: transparent; */
+            border-radius: 0;
+            background-color: $va-navy;
+            color: $va-white;
+        }
+
+        //.nav-pills li.dropdown ul.dropdown-menu {
+        //    background-color: $va-light-grey;
+        //    color: $va-navy-darker;
+        //    a:hover,
+        //    a:active {
+        //        color: $va-light-grey;
+        //        background-color: $va-navy-darker;
+        //    }
+        //}
+
+        .dropdown li .active {
+            background-color: $va-navy;
+            border-radius: 0;
+            font-weight: 400;
+            color: $va-white;
+        }
+        .dropdown li > a:hover,
+        .dropdown li > a:active {
+            /* background-color: transparent; */
+            border-radius: 0;
+            background-color: $va-navy;
+            color: $va-white;
+        }
+
+        //ul li .active,
+        //ul li.pull-right .active {
+        //    color: $va-navy-darker;
+        //}
+        //ul li:hover a {
+        //    background: $va-navy-darker none repeat scroll 0 0; /* 80% of light blue */
+        //    color: #FFF;
+        //}
+
+        .dropdown ul.dropdown-menu, ul.dropdown-menu li a {
+            background-color: $va-light-grey;
+            color: $va-navy-darker;
+        }
+    }
+    #oo-tabs {
+        .nav {
+            margin: 4px 0 0 0;
+        }
+        .nav-tabs {
+            border-bottom: 1px solid $va-light-grey; /* #dcddde */
+        }
+
+        ul li:first-child {
+            margin-left: 0;
+        }
+        ul li:nth-last-child(2) {
+            margin-right: 0;
+        }
+        ul li .active {
+            background: #FFF none repeat scroll 0 0;
+        }
+        ul li.pull-right .active {
+            background: $va-gold-lighter none repeat scroll 0 0;
+
+        }
+        ul li .active,
+        ul li.pull-right .active {
+            color: $va-navy-darker;
+        }
+        ul li:hover a {
+            background: $va-navy-darker none repeat scroll 0 0; /* 80% of light blue */
+            color: #FFF;
+        }
+        ul li a {
+            background: $va-navy none repeat scroll 0 0;
+            color: #FFF;
+            padding: 8px 10px;
+        }
+        ul li:hover a {
+            color: #FFF;
+        }
+        ul li.pull-right a {
+            background-color: $va-gold;
+            color: $va-navy;
+        }
+        ul li.pull-right:hover a {
+            background-color: $va-gold-lighter;
+        }
+
+        .dropdown li .active {
+            background-color: $va-navy;
+            border-radius: 0;
+            font-weight: 400;
+            color: $va-white;
+        }
+        .dropdown li > a:hover,
+        .dropdown li > a:active {
+            /* background-color: transparent; */
+            border-radius: 0;
+            background-color: $va-navy;
+            color: $va-white;
+        }
+        .dropdown ul.dropdown-menu, ul.dropdown-menu li a {
+            background-color: $va-light-grey;
+            color: $va-navy-darker;
+        }
+    }
+}

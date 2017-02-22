@@ -1,0 +1,121 @@
+// Mixins
+// --------------------------------------------------
+// Vertical gradient, from top to bottom
+//
+// Creates two color stops, start and end, by specifying a color and position for each color stop.
+// Color stops are not available in IE9 and below.
+@mixin gradient-vertical($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+    background-image: -webkit-linear-gradient(top, $start-color $start-percent, $end-color $end-percent); // Safari 5.1-6, Chrome 10+
+    background-image: -o-linear-gradient(top, $start-color $start-percent, $end-color $end-percent); // Opera 12
+    background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
+}
+
+@mixin button-variant($color, $background, $border) {
+    color: $color;
+    background-color: $background;
+    border-color: $border;
+
+    &:focus,
+    &.focus {
+        color: $color;
+        background-color: darken($background, 10%);
+        border-color: darken($border, 25%);
+    }
+    &:hover {
+        color: $color;
+        background-color: darken($background, 10%);
+        border-color: darken($border, 12%);
+    }
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle {
+        color: $color;
+        background-color: darken($background, 10%);
+        border-color: darken($border, 12%);
+
+        &:hover,
+        &:focus,
+        &.focus {
+            color: $color;
+            background-color: darken($background, 17%);
+            border-color: darken($border, 25%);
+        }
+    }
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle {
+        background-image: none;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &:hover,
+        &:focus,
+        &.focus {
+            background-color: $background;
+            border-color: $border;
+        }
+    }
+
+    .badge {
+        color: $background;
+        background-color: $color;
+    }
+}
+
+@mixin panel-variant($border, $heading-text-color, $heading-bg-color, $heading-border) {
+    border-color: $border;
+
+    & > .panel-heading {
+        color: $heading-text-color;
+        background-color: $heading-bg-color;
+        border-color: $heading-border;
+
+        + .panel-collapse > .panel-body {
+            border-top-color: $border;
+        }
+        .badge {
+            color: $heading-bg-color;
+            background-color: $heading-text-color;
+        }
+    }
+    & > .panel-footer {
+        + .panel-collapse > .panel-body {
+            border-bottom-color: $border;
+        }
+    }
+}
+
+@mixin navigation-button($class, $background-color, $font-color) {
+    .nav-pills > li.#{$class} {
+        background-color: $background-color;
+    }
+    .nav-pills > li.#{$class} a,
+    .nav-pills > li.#{$class} button.btn-link {
+        color: $font-color;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .nav-pills > li.#{$class}:active,
+    .nav-pills > li.#{$class}:hover,
+    .nav-pills > li.#{$class}:focus {
+        background-color: darken($background-color, 10%);
+    }
+    .nav-pills > li.#{$class} button {
+        padding: 7px 12px;
+    }
+    .nav-pills > li.#{$class} button:active,
+    .nav-pills > li.#{$class} button:focus {
+        color: $font-color;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .nav-pills li.#{$class} > a:hover,
+    .nav-pills li.#{$class} > a:active {
+        border-radius: 0;
+        background-color: darken($background-color, 10%);
+        color: $font-color;
+    }
+}

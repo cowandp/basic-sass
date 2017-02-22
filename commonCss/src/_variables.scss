@@ -1,0 +1,84 @@
+/* CSS Styling for EAS Applications (OO and COR) */
+
+
+$oo-background-color:#FFF;
+//$va-navy: #003F72;
+$va-navy: #1B4A81;
+$va-navy-lighter: #0E6E9C;
+$va-navy-darker: #01080C;
+$va-navy-border: #9DA5C0;
+$va-white: #FFF;
+$va-light-blue: #0089CF;
+$va-vibrant-blue: #007dba;
+$va-red: #C4262E;
+$va-dark-red: #772432;
+$va-gold: #F3CF45;
+//$va-orange: #f7955b;  /* not good for buttons - color contrast too low */
+$va-orange: #BD5B06;
+$va-blue-gray:  #839097;
+$va-light-grey: #dcddde;
+$va-lighter-grey: #f5f5f5;
+$va-green: #006500;
+$va-lighter-green: #2d762d;
+$va-light-green: lighten($va-lighter-green, 5%);
+$va-very-light-grey: #F9F9F9;
+
+$va-light-blue-lighter: lighten($va-light-blue, 20%) !default;
+$va-gold-lighter: lighten($va-gold, 20%) !default;
+
+$font-family-sans-serif:  "Myriad Pro", Calibri, Helvetica, Arial, sans-serif !default;
+$font-family-serif: Georgia, "Times New Roman", serif !default;
+$font-color-normal: #333;
+$font-size-base: 12px;
+
+$va-btn-primary-color:     $va-white;
+$va-btn-primary-bg:        $va-green !default;
+$va-btn-primary-border:    lighten($va-btn-primary-bg, 5%) !default;
+
+$va-btn-secondary-color:              #fff !default;
+$va-btn-secondary-bg:                 $va-navy !default;
+$va-btn-secondary-border:             darken($va-btn-secondary-bg, 5%) !default;
+
+
+$va-btn-info-color:                 #fff !default;
+$va-btn-info-bg:                    $va-vibrant-blue !default;
+$va-btn-info-border:                darken($va-vibrant-blue, 5%) !default;
+
+$va-btn-warning-color:              #fff !default;
+$va-btn-warning-bg:                 $va-orange !default;
+$va-btn-warning-border:             darken($va-orange,20%) !default;
+
+$va-btn-danger-color:               #fff !default;
+$va-btn-danger-bg:                  $va-red !default;
+$va-btn-danger-border:              darken($va-red, 5%) !default;
+
+$btn-link-disabled-color:        $va-blue-gray !default;
+
+$va-alt-btn-default-color:              #333 !default;
+$va-alt-btn-default-bg:                 #fff !default;
+$va-alt-btn-default-border:             #ccc !default;
+
+$va-alt-btn-primary-color:             $va-green !default;
+$va-alt-btn-primary-bg:                #fff !default;
+$va-alt-btn-primary-border:            darken($va-green, 5%) !default;
+
+$va-alt-btn-danger-color:               $va-red !default;
+$va-alt-btn-danger-bg:                  #FFF !default;
+$va-alt-btn-danger-border:              darken($va-red, 5%) !default;
+
+$va-alt-btn-secondary-color:             $va-navy !default;
+$va-alt-btn-secondary-bg:                #fff !default;
+$va-alt-btn-secondary-border:            darken($va-alt-btn-secondary-color, 5%) !default;
+
+$va-alt-btn-info-color:                 $va-vibrant-blue !default;
+$va-alt-btn-info-bg:                    #FFF !default;
+$va-alt-btn-info-border:                darken($va-vibrant-blue, 5%) !default;
+
+$va-alt-btn-warning-color:              $va-orange !default;
+$va-alt-btn-warning-bg:                 #fff !default;
+$va-alt-btn-warning-border:             darken($va-orange, 5%) !default;
+
+
+$va-panel-default-text:          $va-navy !default;
+$va-panel-default-border:        $va-navy-border !default;
+$va-panel-default-heading-bg:    #f5f5f5 !default;

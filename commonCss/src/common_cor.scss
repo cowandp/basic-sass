@@ -1,0 +1,562 @@
+// Core variables and mixins
+@import "variables";
+@import "mixins";
+@import "closeout";
+@import "navigation";
+
+.requiredField,
+.helpText {
+    color: $va-red;
+}
+
+body.v4master {
+    overflow: visible;
+    height: inherit;
+    width: inherit;
+}
+
+body #s4-workspace {
+    overflow: visible !important;
+}
+
+body #s4-ribbonrow {
+    position: fixed;
+    z-index: 1000;
+    .ms-cui-topBar2 {
+        border-bottom: 1px solid $va-navy;
+    }
+}
+
+#s4-ribbonrow .ms-MenuUIPopupBody, #s4-ribbonrow .ms-popoutMenu, .ms-cui-menu[id ^= "Ribbon."] {
+    position: fixed !important;
+}
+
+.ms-dlgOverlay {
+    width: 100% !important;
+}
+
+#eCertHeader {
+    background-color: $va-navy;
+    color: $va-white;
+    min-height: 60px;
+    #vaBrand {
+        float: left;
+        padding-left: 1em;
+        width: 275px;
+        height: 60px;
+        a, div {
+            float: left;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        img {
+            width: 58px;
+            height: 57px;
+            padding-right: 10px;
+        }
+        #vaAcronym {
+            font-size: 3.2em;
+            font-weight: bold;
+            border-right: 1px solid white;
+            padding-right: 10px;
+        }
+        #vaName {
+            font-family: $font-family-serif;
+            font-size: 11px;
+            font-weight: bold;
+            padding-left: 10px;
+            max-width: 130px;
+        }
+    }
+    #applicationTitle {
+        float: left;
+        padding-left: 1.5em;
+        height: 60px;
+        display: table;
+        h1 {
+            font-weight: bold;
+            display: table-cell;
+            vertical-align: bottom;
+            padding-bottom: 10px;
+        }
+    }
+    .ecert-welcome {
+        float: right;
+    }
+}
+
+.s4-ca {
+    margin-left: 0;
+}
+
+footer {
+    margin-top: 2em;
+    background-color: $va-navy;
+    color: $va-white;
+    a { color: $va-white;}
+    #easFooter {
+        padding: 1.2em;
+
+        #easFooterLeft {
+            width: 70%;
+            text-align: left;
+            float: left;
+            display: inline-block;
+            div {
+                float: left;
+                display: inline-block; }
+            .easLogo {
+                width: 25%;
+                min-width: 140px;
+                padding-right: 1em;
+            }
+            .easHelp {
+                width: 70%;
+                .needHelp {
+                    width: 90px;
+                    color: $va-gold;
+                    font-size: 1.3em;
+                    text-shadow: 1px 1px 2px $va-navy-darker;
+                    font-weight: bold;
+                    text-align: center;
+                    img {padding-top: 1em; }
+                }
+
+                .easContact {
+                    text-align: left;
+                    padding-left: 1.2em;
+                    a:link { color: $va-white;}
+                    a:hover,
+                    a:active {
+                        color: $va-gold;
+                    }
+                }
+            }
+        }
+        #easFooterRight {
+            width: 27%;
+            float: right;
+            display: inline-block;
+            .appInfo {
+                text-align: right;
+            }
+        }
+    }
+
+    #govFooter {
+        clear: both;
+        font-size: 1.1em;
+        padding: 1.2em 5%;
+        margin-top: 1em;
+        a:link {
+            color: $va-white;
+        }
+        a:hover,
+        a:active {
+            color: $va-gold;
+        }
+        a:visited {
+            color: darken($va-gold,10%);
+        }
+        display: block;
+        text-align: center;
+        .govFooterLinks {
+            display: inline-block;
+            a {
+                padding-left: .5em;
+                padding-right: 1em;
+                border-right: 1px solid $va-white;
+            }
+            a:last-child {
+                border-right: none;
+            }
+        }
+    }
+}
+
+#aspnetForm {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a.accordion-toggle.collapsed > i {
+    background-position: -456px -72px !important;
+}
+
+a.accordion-toggle > span {
+    text-decoration: underline !important;
+}
+
+a.accordion-toggle > span:hover {
+    text-decoration: underline !important;
+}
+
+a.accordion-toggle > i {
+    background-position: -313px -119px !important;
+}
+
+a.accordion-toggle {
+    text-decoration: none !important;
+}
+
+a.accordion-toggle:hover {
+    text-decoration: none !important;
+}
+
+#EASContent {
+    .select2-selection__clear {
+        color: $font-color-normal;
+    }
+
+    caption {
+        text-align: left;
+        color: $font-color-normal;
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+    a {
+        color: $va-navy;
+    }
+    a:hover, a:active {
+        color: $va-navy-darker;
+    }
+    main {
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    main.messages-tab .message-list-panel {
+        padding-top: 1em;
+    }
+    main.messages-tab .message-replies-panel h2 {
+        padding-bottom: .8em;
+    }
+    footer.messages-tab {
+        padding-top: 1em;
+        background-color: $va-white;
+        color: $font-color-normal;
+        a { color: $va-navy;}
+    }
+    .count-box {
+        text-align: center;
+        display: table-cell;
+        padding: .25em;
+        border: 1px solid $va-light-grey;
+    }
+    .help-text {
+        color: $va-red;
+    }
+    .comment-block {
+        white-space: pre-line;
+    }
+    .list-group-striped {
+        button:nth-of-type(even) {
+            background-color: $va-very-light-grey;
+        }
+        li:nth-of-type(even) {
+            background-color: $va-very-light-grey;
+        }
+        a:nth-of-type(even) {
+            background-color: $va-very-light-grey;
+            .count-box {
+                background-color: white;
+                color: #555;
+                text-shadow: none;
+            }
+        }
+    }
+
+    .padDiv {
+        padding-bottom: 5px;
+    }
+    .padTop {
+        padding-top: 5px;
+    }
+
+    .validationFail {
+        color: #ff0000 !important;
+    }
+
+    .hideMessage {
+        display: none !important;
+    }
+
+    td {
+        vertical-align: middle;
+    }
+
+    .acronymBox {
+        width: 85px;
+    }
+
+    input.nameBox {
+        width: 100%;
+    }
+
+    .informative {
+        color: green;
+    }
+
+    .warning {
+        color: #ff0000;
+    }
+
+    .fixedIDColumn {
+        width: 85px;
+    }
+
+    .fixedStatusColumn {
+        width: 150px;
+    }
+
+    .fixedNameColumn {
+        width: 200px;
+    }
+
+    .fixedShortColumn {
+        width: 135px;
+    }
+
+    .commentBox {
+        width: 750px;
+    }
+
+    .formButton {
+        width: 200px;
+    }
+
+    font-family: $font-family-sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "Myriad Pro Bold", Calibri, "Helvetica Bold", "Arial Bold", sans-serif;
+        line-height: 1.1em;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: .25em 0;
+        color: $va-navy;
+        text-rendering: optimizelegibility;
+    }
+
+    h1 small,
+    h2 small,
+    h3 small,
+    h4 small,
+    h5 small,
+    h6 small {
+        font-weight: normal;
+        line-height: 1;
+        color: #999999;
+    }
+
+    h1,
+    h2,
+    h3 {
+        line-height: 1.1em;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    h3 {
+        font-size: 1.4em;
+    }
+
+    h4 {
+        font-size: 1.2em;
+    }
+
+    h5 {
+        font-size: 1.1em;
+    }
+
+    h6 {
+        font-size: 1em;
+    }
+    blockquote {
+        border-left: none;
+    }
+    /* Styling for My COR Files list */
+    .cor-file-outline {
+        @include gradient-vertical(white, $va-lighter-grey);
+        a {
+            font-size: larger;
+            font-weight: bold;
+        }
+        border: black solid 1px;
+        padding: 5px;
+    }
+    /************************************/
+    // VA Buttons
+    /************************************/
+    .close {
+        color: $va-navy;
+        opacity: .7;
+    }
+    .va-btn-primary {
+        @include button-variant($va-btn-primary-color, $va-btn-primary-bg, $va-btn-primary-border);
+    }
+
+    // VA Secondary appears as blue
+    .va-btn-secondary {
+        @include button-variant($va-btn-secondary-color, $va-btn-secondary-bg, $va-btn-secondary-border);
+    }
+
+    // Info appears as lighter blue
+    .va-btn-info {
+        @include button-variant($va-btn-info-color, $va-btn-info-bg, $va-btn-info-border);
+    }
+     // Warning appears as orange
+    .va-btn-warning {
+        @include button-variant($va-btn-warning-color, $va-btn-warning-bg, $va-btn-warning-border);
+    }
+    // Danger and error appear as red
+    .va-btn-danger {
+        @include button-variant($va-btn-danger-color, $va-btn-danger-bg, $va-btn-danger-border);}
+
+    /************************/
+    /* Alternate Buttons - with white backgrounds and colored border and text */
+    /************************/
+
+    .va-alt-btn-default {
+        @include button-variant($va-alt-btn-default-color, $va-alt-btn-default-bg, $va-alt-btn-default-border);
+    }
+    .va-alt-btn-primary {
+        @include button-variant($va-alt-btn-primary-color, $va-alt-btn-primary-bg, $va-alt-btn-primary-border);
+    }
+
+    .va-alt-btn-secondary {
+        @include button-variant($va-alt-btn-secondary-color, $va-alt-btn-secondary-bg, $va-alt-btn-secondary-border);
+    }
+    .va-alt-btn-info {
+        @include button-variant($va-alt-btn-info-color, $va-alt-btn-info-bg, $va-alt-btn-info-border);
+    }
+    .va-alt-btn-warning {
+        @include button-variant($va-alt-btn-warning-color, $va-alt-btn-warning-bg, $va-alt-btn-warning-border);
+    }
+    .va-alt-btn-danger {
+        @include button-variant($va-alt-btn-danger-color, $va-alt-btn-danger-bg, $va-alt-btn-danger-border);
+    }
+    .va-badge-primary {
+        background-color: $va-vibrant-blue;
+        color: white;
+    }
+    table.document-folder-list td.active a.block-select {
+        color: white !important;
+    }
+
+    /**************************/
+    /*   VA Panels             */
+    /**************************/
+
+    .va-panel-default {
+        @include panel-variant($va-panel-default-border, $va-panel-default-text, $va-panel-default-heading-bg, $va-panel-default-border);
+    }
+    /*Styling for main tabs */
+    #oo-tabs-body .tab-pane {
+        border-right: 1px solid $va-light-grey;
+        border-bottom: 1px solid $va-light-grey;
+        border-left: 1px solid $va-light-grey;
+        border-radius: 0 0 4px 4px;
+        padding: .5em 1em;
+    }
+    .table th, .table td {
+        padding: 2px;
+    }
+    #oo-form {
+        background-color: #FFF;
+        padding: 1.25em;
+
+        input.search-query {
+            padding: .5em;
+        }
+        input, button, select, textarea {
+            font-family: $font-family-sans-serif;
+        }
+        div.oo-error,
+        p.error-message {
+            color: $va-dark-red;
+            padding-left: 2em;
+        }
+        div.oo-in-progress {
+            color: $va-navy;
+            padding-left: 2em;
+        }
+        .oo-contract-details {
+            .span9 {
+                padding-left: 2em;
+            }
+            .table td {
+                border-top: none;
+                line-height: 1.1em;
+            }
+        }
+        .control-group {
+            width: (100%);
+            .control-label {
+                width: 32%;
+            }
+            .controls {
+                margin-left: 35%;
+            }
+        }
+        label {
+            color: $va-navy;
+            font-weight: 600;
+        }
+        p.oo-help {
+            font-style: italic;
+            font-size: .85em;
+        }
+    }
+}
+
+#EASContent {
+    .modal-outline {
+        border: black solid 1px;
+        padding: 5px;
+    }
+
+    .modal-dialog {
+        width: 820px;
+    }
+
+    .modal {
+        overflow-y: auto;
+        display: block;
+    }
+
+    .ember-modal-overlay.translucent {
+        background-color: rgba(#808080, .77);
+    }
+
+    .ember-modal-overlay {
+        height: 100vh;
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 1050;
+    }
+
+    .ember-modal-dialog {
+        z-index: 50;
+        position: fixed;
+
+        &.ember-modal-dialog-in-place {
+            position: relative;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+@import "variables";
+@import "mixins";
+
+$va-closeout-in-progress-color: #fcf8e3;
+$va-closed-color: #d9edf7;
+
+#EASContent {
+    .cor-file-closeout-in-progress-outline {
+        @include gradient-vertical(lighten($va-closeout-in-progress-color,3%), darken($va-closeout-in-progress-color,3%));
+        a {
+            font-size: larger;
+            font-weight: bold;
+        }
+        border: black solid 1px;
+        padding: 5px;
+    }
+    .cor-file-closed-outline {
+        @include gradient-vertical(lighten($va-closed-color,3%), darken($va-closed-color,3%));
+        a {
+            font-size: larger;
+            font-weight: bold;
+        }
+        color: $va-red;
+        border: black solid 1px;
+        padding: 5px;
+    }
+    .cor-file-closeout-in-progress {
+        background-color: $va-closeout-in-progress-color;
+        border-left: 1px solid $va-light-grey;
+        border-right: 1px solid $va-light-grey;
+    }
+    .cor-file-closed {
+        background-color: $va-closed-color;
+        border-left: 1px solid $va-light-grey;
+        border-right: 1px solid $va-light-grey;
+        //color: $va-red;
+    }
+}
